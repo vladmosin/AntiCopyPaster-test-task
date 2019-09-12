@@ -1,0 +1,32 @@
+<idea-plugin>
+  <id>com.hse.spb.vladislavmosin</id>
+  <name>Anti-Copy-Paster</name>
+  <version>1.0</version>
+  <vendor email="vmos1999@gmail.com">HSE SPb</vendor>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+
+    <group id="MyPlugin">
+      <action id="1" class="AntiCopyPaster" text="AntiCopyPaster" description="Outputs code AST">
+        <add-to-group group-id="CutCopyPasteGroup" anchor="last"  />
+        <keyboard-shortcut keymap="$default" first-keystroke="ctrl D"/>
+      </action>
+      <separator/>
+      <reference ref="EditorPaste"/>
+    </group>
+  </actions>
+
+</idea-plugin>
